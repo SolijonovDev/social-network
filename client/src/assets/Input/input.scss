@@ -1,0 +1,15 @@
+.style_input{
+    width: 100%;
+    display: block;
+    padding: 12px 16px;
+    border-radius: 3px;
+    outline: none;
+    font-size: 14px;
+    font-weight: 400px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border:1px solid #003466;
+    &.error{
+        border:1px solid red;
+    }
+}

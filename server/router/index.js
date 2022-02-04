@@ -1,0 +1,17 @@
+const Router=require("express")
+const TokenMiddleware = require("../middleware/token-middleware.js")
+const authRouter=require("./auth.js")
+const channelRouter=require("./channel.js")
+const groupRouter=require("./group.js")
+const chatRouter=require("./chat.js")
+const userRouter=require("./user.js")
+const fileRouter=require("./file")
+const router=new Router()
+
+router.use("/auth",authRouter)
+router.use("/channel",TokenMiddleware,channelRouter)
+router.use("/group",TokenMiddleware,groupRouter)
+router.use("/chat",TokenMiddleware,chatRouter)
+router.use("/user",TokenMiddleware,userRouter)
+router.use("/file",TokenMiddleware,fileRouter)
+module.exports=router;
